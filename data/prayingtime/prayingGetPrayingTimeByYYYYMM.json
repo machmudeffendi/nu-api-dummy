@@ -1,0 +1,24 @@
+{
+    "response_code": 0,
+    "response_message": "ok",
+    "data": [
+        {
+            "city": "jakarta",
+            "date": "20191001",
+            "fajr": "04:30",
+            "duhr": "12:04",
+            "asr": "15:01",
+            "maghrib": "17:59",
+            "isya": "19:00"
+        },
+        {
+            "city": "jakarta",
+            "date": "20191019",
+            "fajr": "04:30",
+            "duhr": "12:04",
+            "asr": "15:01",
+            "maghrib": "17:59",
+            "isya": "19:00"
+        }
+    ]
+}

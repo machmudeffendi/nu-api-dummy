@@ -1,0 +1,25 @@
+{
+    "response_code": "0",
+    "response_message": "ok",
+    "data": {
+        "youtube": {
+            "videoid": "E9qdUcbwr2o",
+            "title": "Apa itu hijrah? ini penjelasan Ustadz Khoiri Fuady",
+            "description": "Akhir-akhir ini marak fenomena hijrah di kalangan muslim tanah air. Apa sebenarnya makna hijrah itu? Berikut adalah sekelumit penjelasan Ust. Khoiri Fuady.",
+            "urlthumbnail": "https://i.ytimg.com/vi/E9qdUcbwr2o/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=E9qdUcbwr2o"
+        },
+        "tweeter": {
+            "tweetid": 1187259678432137216,
+            "username": "NU Online",
+            "screenname": "nu_online",
+            "createdatetime": "Thu Oct 24 13:49:00 ICT 2019",
+            "createdatetimelong": 1571899740000,
+            "text": "Ketika Syekh Abdul Qadir al-Jailani Dirampok \nhttps://t.co/9HmXJdbG3U",
+            "url": "https://twitter.com/nu_online/status/1187259678432137216",
+            "picurl": "http://pbs.twimg.com/profile_images/1186694196322689025/LcFfgN3H_bigger.jpg",
+            "retweetcount": 8,
+            "favcount": 18
+        }
+    }
+}

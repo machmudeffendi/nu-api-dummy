@@ -1,0 +1,32 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "surahlist": [
+            {
+                "id": 1,
+                "title_text": "Al-Fatiha",
+                "title_arabic": "الفاتحة",
+                "translate_english": null,
+                "translate_indonesian": null,
+                "place": "Mecca",
+                "type": "Makkiyah",
+                "audio_path": null,
+                "tajweed_path": null,
+                "count": "7"
+            },
+            {
+                "id": 95,
+                "title_text": "At-Tin",
+                "title_arabic": "التين",
+                "translate_english": null,
+                "translate_indonesian": null,
+                "place": "Mecca",
+                "type": "Makkiyah",
+                "audio_path": null,
+                "tajweed_path": null,
+                "count": "8"
+            }
+        ]
+    }
+}

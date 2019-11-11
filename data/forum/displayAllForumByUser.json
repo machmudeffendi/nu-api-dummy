@@ -1,0 +1,27 @@
+{
+    "status": 0,
+    "message": "ok",
+    "data": [
+        {
+            "creator": "123",
+            "timestamp": "20191022161910",
+            "forum_id": "4",
+            "forum_title": "postingan ke dua",
+            "status": "1"
+        },
+        {
+            "creator": "123",
+            "timestamp": "20191022162131",
+            "forum_id": "5",
+            "forum_title": "postingan ke tiga",
+            "status": "1"
+        },
+        {
+            "creator": "123",
+            "timestamp": "20191022170204",
+            "forum_id": "6",
+            "forum_title": "binatang apa yang paling besar?",
+            "status": "1"
+        }
+    ]
+}

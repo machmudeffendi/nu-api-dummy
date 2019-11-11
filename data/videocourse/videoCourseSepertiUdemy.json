@@ -1,0 +1,22 @@
+{
+    "status": 0,
+    "message": "ok",
+    "data": [
+        {
+            "video_id": 100,
+            "title": "berlibur ke madinah",
+            "path": "http://nu/video1.wmv",
+            "premium": "N",
+            "created_date": "20191010",
+            "updated_date": "20191010"
+        },
+        {
+            "video_id": 101,
+            "title": "berlibur ke mekah",
+            "path": "http://nu/video2.wmv",
+            "premium": "N",
+            "created_date": "20191011",
+            "updated_date": "20191011"
+        }
+    ]
+}

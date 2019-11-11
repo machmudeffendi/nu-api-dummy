@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Data Dummy NU API service</h2>
+    <p>Widget PATH : 
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+                <th>Header</th>
+                <th>Request Body</th>
+            </tr>
+            <tr>
+                <td>widgetGetTwitterFeed</td>
+                <td>/nu/widgetservice/getUserTimeline</td>
+                <td>GET</td>
+                <td>param : 123 (*123 = user_id)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>widgetGetYoutubeFeed</td>
+                <td>/nu/widgetservice/getVideoListUrl</td>
+                <td>GET</td>
+                <td>param : 123 (*123 = user_id)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>getTweetAndYoutubeFeed</td>
+                <td>/nu/widgetservice/getTweetAndYoutubeFeed</td>
+                <td>GET</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+        </table>
+    </p>
+
+    <p>Praying Time PATH :
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+            </tr>
+            <tr>
+                <td>prayingGetThreeDayPrayingTime</td>
+                <td>/nu/prayingtimeservice/prayingGetThreeDayPrayingTime</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>prayingGetTodayPrayingTime</td>
+                <td>/nu/prayingtimeservice/prayingGetTodayPrayingTime</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>prayingGetPrayingTimeByDate</td>
+                <td>/nu/prayingtimeservice/prayingGetPrayingTimeByDate</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>prayingGetCurrentMonthPrayingTime</td>
+                <td>/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTime</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>prayingGetCurrentMonthPrayingTimeOfCity</td>
+                <td>/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTimeOfCity</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>prayingGetPrayingTimeByYYYYMM</td>
+                <td>/nu/prayingtimeservice/prayingGetPrayingTimeByYYYYMM</td>
+                <td>POST</td>
+            </tr>
+            
+        </table>
+    </p>
+
+    <p>Service Quran PATH : 
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+            </tr>
+            <tr>
+                <td>quranGetBookmark</td>
+                <td>/nu/servicequran/quranGetBookmark</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>quranSetBookmark</td>
+                <td>/nu/servicequran/quranSetBookmark</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>listSurah</td>
+                <td>/nu/servicequran/listSurah</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>listSurah</td>
+                <td>/nu/servicequran/listSurah</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>quranSearchSurahByName</td>
+                <td>/nu/servicequran/quranSearchSurahByName</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>quranViewSurahAll</td>
+                <td>/nu/servicequran/quranViewSurahAll</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>quranViewSurahByName</td>
+                <td>/nu/servicequran/quranViewSurahByName</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>quranViewSurahByNumber</td>
+                <td>/nu/servicequran/quranViewSurahByNumber</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>surahListByJuzAll</td>
+                <td>/nu/servicequran/surahListByJuzAll</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>surahListByJuzNumber</td>
+                <td>/nu/servicequran/surahListByJuzNumber</td>
+                <td>POST</td>
+            </tr>
+        </table>
+    </p>
+
+    <p>Forum PATH : 
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+            </tr>
+            <tr>
+                <td>displayAllForumByUser</td>
+                <td>/nu/forum/displayAllForumByUser</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>createForum</td>
+                <td>/nu/forum/createForum</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>postComment</td>
+                <td>/nu/forum/postComment</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>editComment</td>
+                <td>/nu/forum/editComment</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>closeForum</td>
+                <td>/nu/forum/closeForum</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>displayForumDetail</td>
+                <td>/nu/forum/displayForumDetail</td>
+                <td>GET</td>
+            </tr>
+            
+        </table>
+    </p>
+
+    <p>Video Course PATH : 
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+            </tr>
+            <tr>
+                <td>videoCourse (seperti udemy)</td>
+                <td>/nu/videocourse/videoCourseSepertiUdemy</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>searchVideoCourseByTitle</td>
+                <td>/nu/videocourse/searchVideoCourseByTitle</td>
+                <td>POST</td>
+            </tr>
+            
+        </table>
+    </p>
+
+    <p>User PATH : 
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+            </tr>
+            <tr>
+                <td>registerUser</td>
+                <td>/nu/user/registerUser</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>updateProfile</td>
+                <td>/nu/user/updateProfile</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>resetPassword</td>
+                <td>/nu/user/resetPassword</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>updatePassword</td>
+                <td>/nu/user/updatePassword</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>inboxList</td>
+                <td>/nu/user/inboxList</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>inboxDetail</td>
+                <td>/nu/user/inboxDetail</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>login</td>
+                <td>/nu/user/login</td>
+                <td>POST</td>
+            </tr>
+            
+        </table>
+    </p>
+
+</body>
+</html>

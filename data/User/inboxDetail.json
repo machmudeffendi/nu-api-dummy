@@ -1,0 +1,18 @@
+{
+    "response_code":"0",
+    "response_message":"ok",
+    "data":[
+        {
+                    "timestamp":"20190920215959",
+                    "inbox_id":"123",
+                    "title":"Hello World",
+                    "message":"Selamat bergabung dengan kami"
+        },
+        {
+                    "timestamp":"20190920215959",
+                    "inbox_id":"124",
+                    "title":"Chat Update",
+                    "message":"Anda mendapat pesan baru dari Kyai"
+        }
+    ]
+}

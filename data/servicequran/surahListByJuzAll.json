@@ -1,0 +1,48 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "juzsurahlist": [
+            {
+                "id": 1,
+                "surah_id": 1,
+                "surah_title_text": "Al-Fatiha",
+                "surah_title_arabic": "الفاتحة",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_1",
+                "end_verse": "verse_7"
+            },
+            {
+                "id": 1,
+                "surah_id": 2,
+                "surah_title_text": "Al-Baqara",
+                "surah_title_arabic": "البقرة",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_1",
+                "end_verse": "verse_141"
+            },
+            {
+                "id": 8,
+                "surah_id": 6,
+                "surah_title_text": "Al-An'am",
+                "surah_title_arabic": "الأنعام",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_111",
+                "end_verse": "verse_165"
+            },
+            {
+                "id": 8,
+                "surah_id": 7,
+                "surah_title_text": "Al-A'raf",
+                "surah_title_arabic": "الأعراف",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_1",
+                "end_verse": "verse_87"
+            }
+        ]
+    }
+}

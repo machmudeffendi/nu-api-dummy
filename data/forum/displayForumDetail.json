@@ -1,0 +1,38 @@
+{
+    "status": 0,
+    "message": "ok",
+    "data": [
+        {
+            "creator": "123",
+            "comment_id": "16",
+            "timestamp": "20191022181140",
+            "forum_id": "7",
+            "forum_title": "planet apa yang paling dekat dengan matahari?",
+            "comment": "Planet apa yang paling dekat dengan matahari?"
+        },
+        {
+            "creator": "123",
+            "comment_id": "17",
+            "timestamp": "20191022181302",
+            "forum_id": "7",
+            "forum_title": "planet apa yang paling dekat dengan matahari?",
+            "comment": "merkurius"
+        },
+        {
+            "creator": "123",
+            "comment_id": "18",
+            "timestamp": "20191022181403",
+            "forum_id": "7",
+            "forum_title": "planet apa yang paling dekat dengan matahari?",
+            "comment": "salah. coba lagi"
+        },
+        {
+            "creator": "124",
+            "comment_id": "19",
+            "timestamp": "20191022181417",
+            "forum_id": "7",
+            "forum_title": "planet apa yang paling dekat dengan matahari?",
+            "comment": "planet sport"
+        }
+    ]
+}

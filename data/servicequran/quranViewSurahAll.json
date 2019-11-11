@@ -1,0 +1,56 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "surah": {
+            "indonesian": [
+                {
+                    "id": 1,
+                    "database_id": 68,
+                    "surah_id": "1",
+                    "verse_id": "1",
+                    "ayah_text": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang."
+                },
+                {
+                    "id": 7,
+                    "database_id": 68,
+                    "surah_id": "1",
+                    "verse_id": "7",
+                    "ayah_text": "(yaitu) Jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat."
+                }
+            ],
+            "arabic": [
+                {
+                    "id": 1,
+                    "database_id": 1,
+                    "surah_id": "1",
+                    "verse_id": "1",
+                    "ayah_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
+                },
+                {
+                    "id": 7,
+                    "database_id": 1,
+                    "surah_id": "1",
+                    "verse_id": "7",
+                    "ayah_text": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ"
+                }
+            ],
+            "english": [
+                {
+                    "id": 1,
+                    "database_id": 125,
+                    "surah_id": "1",
+                    "verse_id": "1",
+                    "ayah_text": "By God`s Name, the Merciful, the Merciful/Most Merciful ."
+                },
+                {
+                    "id": 7,
+                    "database_id": 125,
+                    "surah_id": "1",
+                    "verse_id": "7",
+                    "ayah_text": "(The) way/road (of) those You blessed on them, not (those) the angered on them, and nor the misguided."
+                }
+            ]
+        }
+    }
+}

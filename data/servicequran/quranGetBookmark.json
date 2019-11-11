@@ -1,0 +1,16 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "bookmark": [
+            {
+                "id": 1,
+                "user_id": "xxxxx",
+                "surah_id": "2",
+                "verse_id": "2",
+                "created_date": "20191010",
+                "updated_date": "20191010"
+            }
+        ]
+    }
+}

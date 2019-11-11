@@ -1,0 +1,38 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "juzsurahlist": [
+            {
+                "id": 20,
+                "surah_id": 27,
+                "surah_title_text": "An-Naml",
+                "surah_title_arabic": "النمل",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_56",
+                "end_verse": "verse_93"
+            },
+            {
+                "id": 20,
+                "surah_id": 28,
+                "surah_title_text": "Al-Qasas",
+                "surah_title_arabic": "القصص",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_1",
+                "end_verse": "verse_88"
+            },
+            {
+                "id": 20,
+                "surah_id": 29,
+                "surah_title_text": "Al-Ankabut",
+                "surah_title_arabic": "العنكبوت",
+                "surah_translate_english": null,
+                "surah_translate_indonesian": null,
+                "start_verse": "verse_1",
+                "end_verse": "verse_45"
+            }
+        ]
+    }
+}

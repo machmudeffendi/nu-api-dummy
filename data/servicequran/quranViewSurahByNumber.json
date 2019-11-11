@@ -1,0 +1,35 @@
+{
+    "response_code": 0,
+    "response_message": "OK",
+    "data": {
+        "surah": {
+            "indonesian": [
+                {
+                    "id": 2,
+                    "database_id": 68,
+                    "surah_id": "1",
+                    "verse_id": "2",
+                    "ayah_text": "Segala puji bagi Allah, Tuhan semesta alam."
+                }
+            ],
+            "arabic": [
+                {
+                    "id": 2,
+                    "database_id": 1,
+                    "surah_id": "1",
+                    "verse_id": "2",
+                    "ayah_text": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ"
+                }
+            ],
+            "english": [
+                {
+                    "id": 2,
+                    "database_id": 125,
+                    "surah_id": "1",
+                    "verse_id": "2",
+                    "ayah_text": "The gratitude/thanks/praise to God, the creation`s altogether`s/(universe`s) Lord."
+                }
+            ]
+        }
+    }
+}
