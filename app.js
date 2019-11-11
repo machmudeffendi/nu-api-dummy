@@ -381,7 +381,7 @@ app.post('/nu/servicequran/surahListByJuzNumber', (req, res) => {
 });
 
 // FORUM ROUTE
-app.get('/nu/forum/displayAllForumByUser', (req, res) => {
+app.post('/nu/forum/displayAllForumByUser', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
@@ -402,7 +402,7 @@ app.get('/nu/forum/displayAllForumByUser', (req, res) => {
     }
 });
 
-app.get('/nu/forum/createForum', (req, res) => {
+app.post('/nu/forum/createForum', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
@@ -429,7 +429,7 @@ app.get('/nu/forum/createForum', (req, res) => {
     }
 });
 
-app.get('/nu/forum/postComment', (req, res) => {
+app.post('/nu/forum/postComment', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
@@ -454,7 +454,7 @@ app.get('/nu/forum/postComment', (req, res) => {
     }
 });
 
-app.get('/nu/forum/editComment', (req, res) => {
+app.post('/nu/forum/editComment', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
@@ -481,7 +481,7 @@ app.get('/nu/forum/editComment', (req, res) => {
     }
 });
 
-app.get('/nu/forum/closeForum', (req, res) => {
+app.post('/nu/forum/closeForum', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
@@ -506,7 +506,7 @@ app.get('/nu/forum/closeForum', (req, res) => {
     }
 });
 
-app.get('/nu/forum/displayForumDetail', (req, res) => {
+app.post('/nu/forum/displayForumDetail', (req, res) => {
     console.log("\nPath : "+req.path);
     var param = req.header("param");
     var reqBody = req.body;
