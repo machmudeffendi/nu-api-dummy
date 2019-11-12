@@ -1,0 +1,36 @@
+{
+    "response_code" : "0",
+    "response_message" : "OK",
+    "data" : [
+        {
+            "type" : "membership",
+            "purchase" : {
+                "datetime" : 20190923,
+                "amount" : 20000,
+                "status" : "paid" ,
+                "cycle" : 20
+             }
+        },
+        {
+            "type" : "video",
+            "purchase" : [
+                {
+                    "id" : "VID1",
+                    "title" : "video_1",
+                    "datetime" : 20190923,
+                    "amount" : 20000,
+                    "status" : "paid" ,
+                    "cycle" : 20
+                },
+                {
+                    "id" : "VID2",
+                    "title" : "video_2",
+                    "datetime" : 20190923,
+                    "amount" : 40000,
+                    "status" : "paid" ,
+                    "cycle" : 25
+                }
+            ]
+        }        
+    ]
+}

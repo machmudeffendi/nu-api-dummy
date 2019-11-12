@@ -1,16 +1,36 @@
 {
-    "response_code":"0",
-    "response_message":"ok",
-    "data":[
+    "response_code": 0,
+    "response_message": "ok",
+    "data": [
         {
-            "timestamp":"20190920215959",
-            "inbox_id":"123",
-            "title":"Hello World"
+            "inbox_id": "1         ",
+            "create_date": "20191023",
+            "title": "inbox satu",
+            "message": "message inbox satu"
         },
         {
-            "timestamp":"20190920215959",
-            "inbox_id":"124",
-            "title":"Nyapa aja"		
+            "inbox_id": "2         ",
+            "create_date": "20191023",
+            "title": "inbox dua",
+            "message": "message inbox dua"
+        },
+        {
+            "inbox_id": "3         ",
+            "create_date": "20191023",
+            "title": "inbox tiga",
+            "message": "message inbox tiga"
+        },
+        {
+            "inbox_id": "4         ",
+            "create_date": "20191023",
+            "title": "inbox empat",
+            "message": "message inbox empat"
+        },
+        {
+            "inbox_id": "5         ",
+            "create_date": "20191023",
+            "title": "inbox lima",
+            "message": "message inbox lima"
         }
     ]
 }

@@ -16,7 +16,7 @@ var rawBodyHandler = function (req, res, buf, encoding) {
     }
 }
 
-app.use(cors({ allowedHeaders: 'Content-Type, Cache-Control, param' }));
+app.use(cors({ allowedHeaders: 'Content-Type, Cache-Control, user_id, param, token' }));
 app.options('*', cors());  // enable pre-flight
 
 app.use(bodyParser.json({ verify: rawBodyHandler }));
@@ -33,7 +33,7 @@ const USER_DIR = "data/user";
 
 // WIDGET ROUTE 
 app.get('/nu/widgetservice/getUserTimeline', (req, res) => {
-    var param = req.header("param");
+    var param = req.header("user_id");
     console.log("\nPath : "+req.path);
     if(param == "" || param == undefined || param == null){
         console.log("Get some trouble param header:"+ param);
@@ -45,7 +45,7 @@ app.get('/nu/widgetservice/getUserTimeline', (req, res) => {
 });
 
 app.get('/nu/widgetservice/getVideoListUrl', (req, res) => {
-    var param = req.header("param");
+    var param = req.header("user_id");
     console.log("\nPath : "+req.path);
     if(param == "" || param == undefined || param == null){
         console.log("Get some trouble param header:"+ param);
@@ -65,16 +65,16 @@ app.get('/nu/widgetservice/getTweetAndYoutubeFeed', (req, res) => {
 app.post('/nu/prayingtimeservice/prayingGetThreeDayPrayingTime', (req, res) => {
     console.log("\nPath : "+req.path);
 
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var latitude = reqBody.latitude;
     var longitude = reqBody.longitude;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(latitude == "" || latitude == undefined || latitude == null || 
             longitude == "" || longitude == undefined || longitude == null){
                 console.log("Err : latitude = "+latitude+" longitude = "+longitude);
@@ -89,16 +89,16 @@ app.post('/nu/prayingtimeservice/prayingGetThreeDayPrayingTime', (req, res) => {
 app.post('/nu/prayingtimeservice/prayingGetTodayPrayingTime', (req, res) => {
     console.log("\nPath : "+req.path);
 
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var latitude = reqBody.latitude;
     var longitude = reqBody.longitude;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(latitude == "" || latitude == undefined || latitude == null || 
             longitude == "" || longitude == undefined || longitude == null){
                 console.log("Err : latitude = "+latitude+" longitude = "+longitude);
@@ -118,17 +118,17 @@ app.post('/nu/prayingtimeservice/prayingGetPrayingTimeByDate', (req, res) => {
 // }"
     console.log("\nPath : "+req.path);
 
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var latitude = reqBody.latitude;
     var longitude = reqBody.longitude;
     var date = reqBody.date;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(latitude == "" || latitude == undefined || latitude == null || 
             longitude == "" || longitude == undefined || longitude == null ||
             date == "" || date == undefined || date == null){
@@ -143,13 +143,13 @@ app.post('/nu/prayingtimeservice/prayingGetPrayingTimeByDate', (req, res) => {
 
 app.post('/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTime', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("Success : param = "+param);
+        console.log("Success : Param Header user_id = "+param);
         res.sendFile(path.join(__dirname, PRAYINGTIME_DIR, 'prayingGetCurrentMonthPrayingTime.json'));
     }
 });
@@ -157,16 +157,16 @@ app.post('/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTime', (req, res) 
 app.post('/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTimeOfCity', (req, res) => {
     console.log("\nPath : "+req.path);
 
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var latitude = reqBody.latitude;
     var longitude = reqBody.longitude;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(latitude == "" || latitude == undefined || latitude == null || 
             longitude == "" || longitude == undefined || longitude == null){
                 console.log("Err : latitude = "+latitude+" longitude = "+longitude);
@@ -181,17 +181,17 @@ app.post('/nu/prayingtimeservice/prayingGetCurrentMonthPrayingTimeOfCity', (req,
 app.post('/nu/prayingtimeservice/prayingGetPrayingTimeByYYYYMM', (req, res) => {
     console.log("\nPath : "+req.path);
 
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var latitude = reqBody.latitude;
     var longitude = reqBody.longitude;
     var yyyymm = reqBody.yyyymm;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(latitude == "" || latitude == undefined || latitude == null || 
             longitude == "" || longitude == undefined || longitude == null ||
             yyyymm == "" || yyyymm == undefined || yyyymm == null){
@@ -207,30 +207,30 @@ app.post('/nu/prayingtimeservice/prayingGetPrayingTimeByYYYYMM', (req, res) => {
 // SERVICE QURAN ROUTE
 app.post('/nu/servicequran/quranGetBookmark', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("Success : param = "+param);
+        console.log("Success : Param Header user_id = "+param);
         res.sendFile(path.join(__dirname, SERVICEQURAN_DIR, 'quranGetBookmark.json'));
     }
 });
 
 app.post('/nu/servicequran/quranSetBookmark', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var surah_id = reqBody.surah_id;
     var verse = reqBody.verse;
     var juz_id = reqBody.juz_id;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(surah_id == "" || surah_id == undefined || surah_id == null || 
             verse == "" || verse == undefined || verse == null ||
             juz_id == "" || juz_id == undefined || juz_id == null){
@@ -245,28 +245,28 @@ app.post('/nu/servicequran/quranSetBookmark', (req, res) => {
 
 app.post('/nu/servicequran/listSurah', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("Success : param = "+param);
+        console.log("Success : Param Header user_id = "+param);
         res.sendFile(path.join(__dirname, SERVICEQURAN_DIR, 'listSurah.json'));
     }
 });
 
 app.post('/nu/servicequran/quranSearchSurahByName', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var keyword = reqBody.keyword;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(keyword == "" || keyword == undefined || keyword == null){
                 console.log("Err : keyword = "+keyword);
                 res.send("Err : keyword = "+keyword);
@@ -279,15 +279,15 @@ app.post('/nu/servicequran/quranSearchSurahByName', (req, res) => {
 
 app.post('/nu/servicequran/quranViewSurahAll', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var language = reqBody.language;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(language == "" || language == undefined || language == null){
                 console.log("Err : language = "+language);
                 res.send("Err : language = "+language);
@@ -300,16 +300,16 @@ app.post('/nu/servicequran/quranViewSurahAll', (req, res) => {
 
 app.post('/nu/servicequran/quranViewSurahByName', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var keyword = reqBody.keyword;
     var language = reqBody.language;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(keyword == "" || keyword == undefined || keyword == null || 
             language == "" || language == undefined || language == null){
                 console.log("Err : keyword = "+keyword+" language = "+language);
@@ -323,17 +323,17 @@ app.post('/nu/servicequran/quranViewSurahByName', (req, res) => {
 
 app.post('/nu/servicequran/quranViewSurahByNumber', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var keyword = reqBody.keyword;
     var language = reqBody.language;
     var verse = reqBody.varse;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(keyword == "" || keyword == undefined || keyword == null || 
             language == "" || language == undefined || language == null || 
             verse == "" || verse == undefined || verse == null){
@@ -348,28 +348,28 @@ app.post('/nu/servicequran/quranViewSurahByNumber', (req, res) => {
 
 app.post('/nu/servicequran/surahListByJuzAll', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("Success : param = "+param);
+        console.log("Success : Param Header user_id = "+param);
         res.sendFile(path.join(__dirname, SERVICEQURAN_DIR, 'surahListByJuzAll.json'));
     }
 });
 
 app.post('/nu/servicequran/surahListByJuzNumber', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var juz = reqBody.juz;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(juz == "" || juz == undefined || juz == null){
                 console.log("Err : juz = "+juz);
                 res.send("Err : juz = "+juz);
@@ -383,15 +383,15 @@ app.post('/nu/servicequran/surahListByJuzNumber', (req, res) => {
 // FORUM ROUTE
 app.post('/nu/forum/displayAllForumByUser', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null){
                 console.log("Err : user = "+user);
                 res.send("Err : user = "+user);
@@ -404,7 +404,7 @@ app.post('/nu/forum/displayAllForumByUser', (req, res) => {
 
 app.post('/nu/forum/createForum', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
     var title = reqBody.title;
@@ -412,10 +412,10 @@ app.post('/nu/forum/createForum', (req, res) => {
     var message = reqBody.message;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null || 
             title == "" || title == undefined || title == null || 
             category == "" || category == undefined || category == null || 
@@ -431,17 +431,17 @@ app.post('/nu/forum/createForum', (req, res) => {
 
 app.post('/nu/forum/postComment', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
     var forum_id = reqBody.forum_id;
     var message = reqBody.message;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null || 
             forum_id == "" || forum_id == undefined || forum_id == null ||
             message == "" || message == undefined || message == null){
@@ -456,7 +456,7 @@ app.post('/nu/forum/postComment', (req, res) => {
 
 app.post('/nu/forum/editComment', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
     var forum_id = reqBody.forum_id;
@@ -464,10 +464,10 @@ app.post('/nu/forum/editComment', (req, res) => {
     var message = reqBody.message;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null || 
             forum_id == "" || forum_id == undefined || forum_id == null || 
             comment_id == "" || comment_id == undefined || comment_id == null || 
@@ -483,17 +483,17 @@ app.post('/nu/forum/editComment', (req, res) => {
 
 app.post('/nu/forum/closeForum', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
     var forum_id = reqBody.forum_id;
     var status = reqBody.status;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null || 
             forum_id == "" || forum_id == undefined || forum_id == null ||
             status == "" || status == undefined || status == null){
@@ -508,16 +508,16 @@ app.post('/nu/forum/closeForum', (req, res) => {
 
 app.post('/nu/forum/displayForumDetail', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var user = reqBody.user;
     var forum_id = reqBody.forum_id;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(user == "" || user == undefined || user == null || 
             forum_id == "" || forum_id == undefined || forum_id == null){
                 console.log("Err : user = "+user+" forum_id = "+forum_id);
@@ -532,28 +532,28 @@ app.post('/nu/forum/displayForumDetail', (req, res) => {
 // VIDEO COURSE ROUTE
 app.post('/nu/videocourse/videoCourseSepertiUdemy', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         res.sendFile(path.join(__dirname, VIDEOCOURSE_DIR, 'videoCourseSepertiUdemy.json'));
     }
 });
 
 app.post('/nu/videocourse/searchVideoCourseByTitle', (req, res) => {
     console.log("\nPath : "+req.path);
-    var param = req.header("param");
+    var param = req.header("user_id");
     var reqBody = req.body;
     var search_keyword = reqBody.search_keyword;
 
     if (param == "" || param == undefined || param == null){
-        console.log("Err : param = "+param);
-        res.send("Err : param = "+param);
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
     }else{
-        console.log("success : param = "+param);
+        console.log("success : Param Header user_id = "+param);
         if(search_keyword == "" || search_keyword == undefined || search_keyword == null){
                 console.log("Err : search_keyword = "+search_keyword);
                 res.send("Err : search_keyword = "+search_keyword);

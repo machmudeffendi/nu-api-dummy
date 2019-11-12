@@ -1,18 +1,12 @@
 {
-    "response_code":"0",
-    "response_message":"ok",
-    "data":[
+    "response_code": 0,
+    "response_message": "ok",
+    "data": [
         {
-                    "timestamp":"20190920215959",
-                    "inbox_id":"123",
-                    "title":"Hello World",
-                    "message":"Selamat bergabung dengan kami"
-        },
-        {
-                    "timestamp":"20190920215959",
-                    "inbox_id":"124",
-                    "title":"Chat Update",
-                    "message":"Anda mendapat pesan baru dari Kyai"
+            "inbox_id": "2         ",
+            "create_date": "20191023",
+            "title": "inbox dua",
+            "message": "message inbox dua"
         }
     ]
 }
