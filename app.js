@@ -327,7 +327,7 @@ app.post('/nu/servicequran/quranViewSurahByNumber', (req, res) => {
     var reqBody = req.body;
     var keyword = reqBody.keyword;
     var language = reqBody.language;
-    var verse = reqBody.varse;
+    var verse = reqBody.verse;
 
     if (param == "" || param == undefined || param == null){
         console.log("Err : Param Header user_id = "+param);
