@@ -354,5 +354,38 @@
         </table>
     </p>
 
+    <p>Activity History :
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+                <th>Request body</th>
+            </tr>
+            <tr>
+                <td>insertActivityHistory</td>
+                <td>/nu/activityhistory/insertActivityHistory</td>
+                <td>POST</td>
+                <td>{
+                    "service_code":"qr"
+                    "user_id":"1000001",
+                    "calling_type":"1",
+                    "information":"search for user id : <user_id>"
+                    }
+                    </td>
+            </tr>
+            <tr>
+                <td>selectActivityHistory</td>
+                <td>/nu/activityhistory/selectActivityHistory</td>
+                <td>POST</td>
+                <td>{
+                    "user_id" : "10001"
+                    }
+                </td>
+            </tr>
+        </table>
+    </p>
+
+
 </body>
 </html>

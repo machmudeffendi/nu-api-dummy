@@ -1,0 +1,21 @@
+{
+    "response_code":0,
+    "response_message":"ok",
+    "data":[{
+    "trx_id":"TH201910281639420435",
+    "calling_date":"20191028",
+    "calling_time":"233948",
+    "user_id":"100000",
+    "user_type":"u",
+    "calling_type":"1",
+    "information":"search by user id : <user_id>"
+    },{
+    "trx_id":"TH201910281639423241",
+    "calling_date":"20191028",
+    "calling_time":"234003",
+    "user_id":"100002",
+    "user_type":"k",
+    "calling_type":"5",
+    "information":"insert new history"
+    }]
+}

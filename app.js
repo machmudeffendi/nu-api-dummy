@@ -30,6 +30,7 @@ const FORUM_DIR = "data/forum";
 const VIDEOCOURSE_DIR = "data/videocourse";
 const USER_DIR = "data/user";
 const PURCHASE_DIR = "data/purchase";
+const ACTIVITYHISTORY_DIR = "data/activityHistory"
 
 
 // WIDGET ROUTE 
@@ -894,13 +895,10 @@ app.get('/nu/member/confirmation', (req, res) => {
     var haederToken = req.header("token");
 
     if (haederToken == "" || haederToken == undefined || haederToken == null){
-        console.log("Err : Header user_id = "+headerUser_id
-            +", token = "+haederToken);
-        res.send("Err : Header user_id = "+headerUser_id
-            +", token = "+haederToken);
+        console.log("Err : token = "+haederToken);
+        res.send("Err : token = "+haederToken);
     }else{
-        console.log("success : Header user_id = "+headerUser_id
-            +", token = "+haederToken);
+        console.log("success : token = "+haederToken);
         res.sendFile(path.join(__dirname, USER_DIR, 'callbackConfirmation.json'));
     }
 });
@@ -996,6 +994,65 @@ app.post('/nu/purchase/pay', (req, res) => {
         }
     }
 });
+
+//Activity History
+app.post('/nu/activityhistory/insertActivityHistory', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var service_code = reqBody.service_code;
+    var user_id = reqBody.user_id;
+    var calling_type = reqBody.calling_type;
+    var information = reqBody.information;
+    
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(service_code == "" || service_code == undefined || service_code == null ||
+        user_id == "" || user_id == undefined || user_id == null ||
+        calling_type == "" || calling_type == undefined || calling_type == null ||
+        information == "" || information == undefined || information == null){
+                console.log("Err : service_code = "+service_code
+                    +", user_id = "+user_id
+                    +", calling_type = "+calling_type
+                    +", information = "+information);
+                res.send("Err : service_code = "+service_code
+                    +", user_id = "+user_id
+                    +", calling_type = "+calling_type
+                    +", information = "+information);
+        }else{
+            console.log("Success : service_code = "+service_code
+                +", user_id = "+user_id
+                +", calling_type = "+calling_type
+                +", information = "+information);
+            res.sendFile(path.join(__dirname, ACTIVITYHISTORY_DIR, 'insertActivityHistory.json'));
+        }
+    }
+});
+
+app.post('/nu/activityhistory/selectActivityHistory', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var user_id = reqBody.user_id;
+    
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(user_id == "" || user_id == undefined || user_id == null){
+                console.log("Err : user_id = "+user_id);
+                res.send("Err : user_id = "+user_id);
+        }else{
+            console.log("Success : user_id = "+user_id);
+            res.sendFile(path.join(__dirname, ACTIVITYHISTORY_DIR, 'selectActivityHistory.json'));
+        }
+    }
+});
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "data", 'home.html'));
