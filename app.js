@@ -29,6 +29,7 @@ const SERVICEQURAN_DIR = "data/servicequran";
 const FORUM_DIR = "data/forum";
 const VIDEOCOURSE_DIR = "data/videocourse";
 const USER_DIR = "data/user";
+const PURCHASE_DIR = "data/purchase";
 
 
 // WIDGET ROUTE 
@@ -327,7 +328,7 @@ app.post('/nu/servicequran/quranViewSurahByNumber', (req, res) => {
     var reqBody = req.body;
     var keyword = reqBody.keyword;
     var language = reqBody.language;
-    var verse = reqBody.varse;
+    var verse = reqBody.verse;
 
     if (param == "" || param == undefined || param == null){
         console.log("Err : Param Header user_id = "+param);
@@ -565,36 +566,436 @@ app.post('/nu/videocourse/searchVideoCourseByTitle', (req, res) => {
 });
 
 // USER
-app.post('/nu/user/registerUser', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'registerUser.json'));
+app.post('/nu/member/register', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var reqBody = req.body;
+    var username = reqBody.username;
+    var password = reqBody.password;
+    var phone_num = reqBody.phone_num;
+    var email = reqBody.email;
+    var device_id = reqBody.device_id;
+    var google_ads_id = reqBody.google_ads_id;
+
+    if(username == "" || username == undefined || username == null ||
+    password == "" || password == undefined || password == null ||
+    phone_num == "" || phone_num == undefined || phone_num == null ||
+    email == "" || email == undefined || email == null ||
+    device_id == "" || device_id == undefined || device_id == null ||
+    google_ads_id == "" || google_ads_id == undefined || google_ads_id == null){
+            console.log("Err : username = "+username
+            +", password = "+password
+            +", phone_num = "+phone_num
+            +", email = "+email
+            +", device_id = "+device_id
+            +", google_ads_id = "+google_ads_id);
+            res.send("Err : username = "+username
+            +", password = "+password
+            +", phone_num = "+phone_num
+            +", email = "+email
+            +", device_id = "+device_id
+            +", google_ads_id = "+google_ads_id);
+    }else{
+        console.log("Success : username = "+username
+            +", password = "+password
+            +", phone_num = "+phone_num
+            +", email = "+email
+            +", device_id = "+device_id
+            +", google_ads_id = "+google_ads_id);
+        res.sendFile(path.join(__dirname, USER_DIR, 'registerUser.json'));
+    }
 });
 
-app.post('/nu/user/updateProfile', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'updateProfile.json'));
+app.post('/nu/member/update-profile', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var username = reqBody.username;
+    var phone_num = reqBody.phone_num;
+    var email = reqBody.email;
+
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(username == "" || username == undefined || username == null ||
+        phone_num == "" || phone_num == undefined || phone_num == null ||
+        email == "" || email == undefined || email == null){
+                console.log("Err : username = "+username
+                    +", phone_num = "+phone_num
+                    +", email = "+email);
+                res.send("Err : username = "+username
+                    +", phone_num = "+phone_num
+                    +", email = "+email);
+        }else{
+            console.log("Success : username = "+username
+                +", phone_num = "+phone_num
+                +", email = "+email);
+            res.sendFile(path.join(__dirname, USER_DIR, 'updateProfile.json'));
+        }
+    }
 });
 
-app.post('/nu/user/resetPassword', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'resetPassword.json'));
+app.post('/nu/member/reset-password', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'resetPassword.json'));
+    }
 });
 
-app.post('/nu/user/updatePassword', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'updatePassword.json'));
+app.post('/nu/member/update-password', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var new_password = reqBody.new_password;
+    var old_password = reqBody.old_password;
+
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(new_password == "" || new_password == undefined || new_password == null ||
+        old_password == "" || old_password == undefined || old_password == null){
+                console.log("Err : new_password = "+new_password
+                    +", old_password = "+old_password);
+                res.send("Err : new_password = "+new_password
+                    +", old_password = "+old_password);
+        }else{
+            console.log("Success : new_password = "+new_password
+                +", old_password = "+old_password);
+            res.sendFile(path.join(__dirname, USER_DIR, 'updatePassword.json'));
+        }
+    }
 });
 
-app.post('/nu/user/inboxList', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'inboxList.json'));
+app.post('/nu/member/inbox-list', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var haederToken = req.header("token");
+
+    if (haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : token = "+haederToken);
+        res.send("Err : token = "+haederToken);
+    }else{
+        console.log("success : token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'inboxList.json'));
+    }
 });
 
-app.post('/nu/user/inboxDetail', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'inboxDetail.json'));
+app.post('/nu/member/inbox-detail', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var user_id = reqBody.user_id;
+    var inbox_id = reqBody.inbox_id;
+    
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(user_id == "" || user_id == undefined || user_id == null ||
+        inbox_id == "" || inbox_id == undefined || inbox_id == null){
+                console.log("Err : user_id = "+user_id
+                    +", inbox_id = "+inbox_id);
+                res.send("Err : user_id = "+user_id
+                    +", inbox_id = "+inbox_id);
+        }else{
+            console.log("Success : user_id = "+user_id
+                +", inbox_id = "+inbox_id);
+            res.sendFile(path.join(__dirname, USER_DIR, 'inboxDetail.json'));
+        }
+    }
 });
 
-app.post('/nu/user/login', (req, res) => {
-    res.sendFile(path.join(__dirname, USER_DIR, 'login.json'));
+app.post('/nu/member/login', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var reqBody = req.body;
+    var username = reqBody.username;
+    var password = reqBody.password;
+ 
+    if(username == "" || username == undefined || username == null ||
+    password == "" || password == undefined || password == null){
+            console.log("Err : username = "+username
+                +", password = "+password);
+            res.send("Err : username = "+username
+                +", password = "+password);
+    }else{
+        console.log("Success : username = "+username
+            +", password = "+password);
+        res.sendFile(path.join(__dirname, USER_DIR, 'login.json'));
+    }
+});
+
+app.post('/nu/member/update-last-seen', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var user_id = reqBody.user_id;
+    var token = reqBody.token;
+    
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(user_id == "" || user_id == undefined || user_id == null ||
+        token == "" || token == undefined || token == null){
+                console.log("Err : user_id = "+user_id
+                    +", token = "+token);
+                res.send("Err : user_id = "+user_id
+                    +", token = "+token);
+        }else{
+            console.log("Success : user_id = "+user_id
+                +", token = "+token);
+            res.sendFile(path.join(__dirname, USER_DIR, 'updateLastSeen.json'));
+        }
+    }
+});
+
+app.post('/nu/member/view-last-seen', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var user_id = reqBody.user_id;
+    var token = reqBody.token;
+    
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(user_id == "" || user_id == undefined || user_id == null ||
+        token == "" || token == undefined || token == null){
+                console.log("Err : user_id = "+user_id
+                    +", token = "+token);
+                res.send("Err : user_id = "+user_id
+                    +", token = "+token);
+        }else{
+            console.log("Success : user_id = "+user_id
+                +", token = "+token);
+            res.sendFile(path.join(__dirname, USER_DIR, 'viewLastSeen.json'));
+        }
+    }
+});
+
+app.post('/nu/member/kyai-list', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var haederToken = req.header("token");
+    
+    if (haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : token = "+haederToken);
+        res.send("Err : token = "+haederToken);
+    }else{
+        console.log("success : token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'kyaiList.json'));
+    }
+});
+
+app.post('/nu/member/kyai-detail', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+        haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+        +", token = "+haederToken);
+        res.send("Err : token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+        +", token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'kyaiDetail.json'));
+    }
+});
+
+app.post('/nu/member/update-kyai-availability', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+    var reqBody = req.body;
+    var online_flag = reqBody.online_flag;
+
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        if(online_flag == "" || online_flag == undefined || online_flag == null){
+                console.log("Err : online_flag = "+online_flag);
+                res.send("Err : online_flag = "+online_flag);
+        }else{
+            console.log("Success : online_flag = "+online_flag);
+            res.sendFile(path.join(__dirname, USER_DIR, 'updateKyaiAvailability.json'));
+        }
+    }
+});
+
+app.post('/nu/member/is-kyai-on', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var headerUser_id = req.header("user_id");
+    var haederToken = req.header("token");
+
+    if (headerUser_id == "" || headerUser_id == undefined || headerUser_id == null ||
+    haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'isKyaiOnline.json'));
+    }
+});
+
+app.get('/nu/member/confirmation', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var haederToken = req.header("token");
+
+    if (haederToken == "" || haederToken == undefined || haederToken == null){
+        console.log("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.send("Err : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+    }else{
+        console.log("success : Header user_id = "+headerUser_id
+            +", token = "+haederToken);
+        res.sendFile(path.join(__dirname, USER_DIR, 'callbackConfirmation.json'));
+    }
 });
 
 
+// Purchase
+app.post('/nu/purchase/video', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var month = reqBody.month;
 
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(month == "" || month == undefined || month == null){
+                console.log("Err : month = "+month);
+                res.send("Err : month = "+month);
+        }else{
+            console.log("Success : month = "+month);
+            res.sendFile(path.join(__dirname, PURCHASE_DIR, 'video.json'));
+        }
+    }
+});
+
+app.post('/nu/purchase/purchaseHistory', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var from_date = reqBody.from_date;
+    var to_date = reqBody.to_date;
+    
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(from_date == "" || from_date == undefined || from_date == null ||
+        to_date == "" || to_date == undefined || to_date == null){
+                console.log("Err : from_date = "+from_date+", to_date = "+to_date);
+                res.send("Err : from_date = "+from_date+", to_date = "+to_date);
+        }else{
+            console.log("Success : from_date = "+from_date+", to_date = "+to_date);
+            res.sendFile(path.join(__dirname, PURCHASE_DIR, 'purchaseHistory.json'));
+        }
+    }
+});
+
+app.post('/nu/purchase/purchase', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var type_purchase = reqBody.type_purchase;
+   
+    
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(type_purchase == "" || type_purchase == undefined || type_purchase == null){
+                console.log("Err : type_purchase = "+type_purchase);
+                res.send("Err : type_purchase = "+type_purchase);
+        }else{
+            console.log("Success : type_purchase = "+type_purchase);
+            res.sendFile(path.join(__dirname, PURCHASE_DIR, 'purchase.json'));
+        }
+    }
+});
+
+app.post('/nu/purchase/pay', (req, res) => {
+    console.log("\nPath : "+req.path);
+    var param = req.header("user_id");
+    var reqBody = req.body;
+    var purchasee_id = reqBody.purchasee_id;
+    var amount = reqBody.amount;
+    
+    
+    if (param == "" || param == undefined || param == null){
+        console.log("Err : Param Header user_id = "+param);
+        res.send("Err : Param Header user_id = "+param);
+    }else{
+        console.log("success : Param Header user_id = "+param);
+        if(purchasee_id == "" || purchasee_id == undefined || purchasee_id == null ||
+        amount == "" || amount == undefined || amount == null){
+                console.log("Err : purchasee_id = "+purchasee_id+", amount = "+amount);
+                res.send("Err : purchasee_id = "+purchasee_id+", amount = "+amount);
+        }else{
+            console.log("Success : purchasee_id = "+purchasee_id+", amount = "+amount);
+            res.sendFile(path.join(__dirname, PURCHASE_DIR, 'pay.json'));
+        }
+    }
+});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "data", 'home.html'));

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Data Dummy NU API service</h2>
-    <p>Widget PATH : 
+    <p>Widget :
         <table width="100%" border="1">
             <tr>
                 <th>API</th>
@@ -83,7 +83,7 @@
         </table>
     </p>
 
-    <p>Service Quran PATH : 
+    <p>Service Quran :
         <table width="100%" border="1">
             <tr>
                 <th>API</th>
@@ -98,11 +98,6 @@
             <tr>
                 <td>quranSetBookmark</td>
                 <td>/nu/servicequran/quranSetBookmark</td>
-                <td>POST</td>
-            </tr>
-            <tr>
-                <td>listSurah</td>
-                <td>/nu/servicequran/listSurah</td>
                 <td>POST</td>
             </tr>
             <tr>
@@ -143,7 +138,7 @@
         </table>
     </p>
 
-    <p>Forum PATH : 
+    <p>Forum :
         <table width="100%" border="1">
             <tr>
                 <th>API</th>
@@ -184,7 +179,7 @@
         </table>
     </p>
 
-    <p>Video Course PATH : 
+    <p>Video Course :
         <table width="100%" border="1">
             <tr>
                 <th>API</th>
@@ -205,49 +200,157 @@
         </table>
     </p>
 
-    <p>User PATH : 
+    <p>USER :
         <table width="100%" border="1">
             <tr>
                 <th>API</th>
                 <th>PATH</th>
                 <th>METHOD</th>
+                <th>Request Body</th>
             </tr>
             <tr>
                 <td>registerUser</td>
-                <td>/nu/user/registerUser</td>
+                <td>/nu/member/register</td>
                 <td>POST</td>
+                <td>{
+                    "username" : "sopian",
+                    "password" :  "sopian123",
+                    "phone_num" : "0815",
+                    "email" : "mohamadsopian31@gmail.com",
+                    "device_id" : "/boj",
+                    "google_ads_id" : "/boj"
+                }</td>
             </tr>
             <tr>
                 <td>updateProfile</td>
-                <td>/nu/user/updateProfile</td>
+                <td>/nu/member/update-profile</td>
                 <td>POST</td>
+                <td>{
+                    "username" : "sopian",
+                    "phone_num" : "08",
+                    "email" : "mohamadsopian31@gmail.com"
+               }
+               </td>
             </tr>
             <tr>
                 <td>resetPassword</td>
-                <td>/nu/user/resetPassword</td>
+                <td>/nu/member/reset-password</td>
                 <td>POST</td>
+                <td>-</td>
             </tr>
             <tr>
                 <td>updatePassword</td>
-                <td>/nu/user/updatePassword</td>
+                <td>/nu/member/update-password</td>
                 <td>POST</td>
+                <td>{
+                    "new_password" : "sopian",
+                     "old_password" : "sopian123"
+                }
+                </td>
             </tr>
             <tr>
                 <td>inboxList</td>
-                <td>/nu/user/inboxList</td>
+                <td>/nu/member/inbox-list</td>
                 <td>POST</td>
+                <td>-</td>
             </tr>
             <tr>
                 <td>inboxDetail</td>
-                <td>/nu/user/inboxDetail</td>
+                <td>/nu/member/inbox-detail</td>
                 <td>POST</td>
+                <td>{
+                    "user_id":" ",
+                    "inbox_id":" "
+                }
+                </td>
             </tr>
             <tr>
                 <td>login</td>
-                <td>/nu/user/login</td>
+                <td>/nu/member/login</td>
                 <td>POST</td>
+                <td>{
+                    "username" : "sopian",
+                    "password" :  "sopian123"
+                   }
+                </td>
             </tr>
-            
+            <tr>
+                <td>updateLastSeen</td>
+                <td>/nu/member/update-last-seen</td>
+                <td>POST</td>
+                <td>param=user_id,token</td>
+            </tr>
+            <tr>
+                <td>viewLastSeen</td>
+                <td>/nu/member/view-last-seen</td>
+                <td>POST</td>
+                <td>param=user_id,token</td>
+            </tr>
+            <tr>
+                <td>kiaiList</td>
+                <td>/nu/member/kyai-list</td>
+                <td>POST</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>kiaiDetail</td>
+                <td>/nu/member/kyai-detail</td>
+                <td>POST</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updateKyaiAvailability</td>
+                <td>/nu/member/update-kyai-availability</td>
+                <td>POST</td>
+                <td>{ "online_flag" : true }</td>
+            </tr>
+            <tr>
+                <td>isKyaiOn</td>
+                <td>/nu/member/is-kyai-on</td>
+                <td>POST</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>confirmation</td>
+                <td>/nu/member/confirmation</td>
+                <td>GET</td>
+                <td>-</td>
+            </tr>
+        </table>
+    </p>
+
+    <p>PURCHASE :
+        <table width="100%" border="1">
+            <tr>
+                <th>API</th>
+                <th>PATH</th>
+                <th>METHOD</th>
+                <th>Request body</th>
+            </tr>
+            <tr>
+                <td>video</td>
+                <td>/nu/purchase/video</td>
+                <td>POST</td>
+                <td>{ "month" : 1 }</td>
+            </tr>
+            <tr>
+                <td>purchaseHistory</td>
+                <td>/nu/purchase/purchaseHistory</td>
+                <td>POST</td>
+                <td>{ "from_date" : 2019-01-01, "to_date" :  2019-02-01 }</td>
+            </tr>
+            <tr>
+                <td>purchase</td>
+                <td>/nu/purchase/purchase</td>
+                <td>POST</td>
+                <td>{ "type purchase" : "MEM/VID" (membership/video)}"</td>
+            </tr>
+            <tr>
+                <td>pay</td>
+                <td>/nu/purchase/pay</td>
+                <td>POST</td>
+                <td>{ "purchasee_id":000003, "amount" : 20000 }</td>
+            </tr>
         </table>
     </p>
 

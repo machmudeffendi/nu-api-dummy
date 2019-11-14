@@ -1,5 +1,32 @@
 {
-    "status": 0,
-    "message": "ok",
-    "data": "sopian123"
+    "response_code": 0,
+    "response_message": "ok",
+    "data": {
+        "username": "sopian",
+        "password": "$2a$10$s7T54EMSZc2wst71LpPYhemv50CCdob2ulIIfpjJPR5SkeqxT0p8.",
+        "authorities": null,
+        "accountNonExpired": true,
+        "accountNonLocked": true,
+        "credentialsNonExpired": true,
+        "enabled": false,
+        "user_id": "MB2019110520281534",
+        "display_name": null,
+        "full_name": null,
+        "phone_num": "08",
+        "email": "mohamadsopian31@gmail.com",
+        "birth_date": null,
+        "status": "1",
+        "role": "1",
+        "reg_date": "20191105202650",
+        "premium": false,
+        "premium_start_date": null,
+        "premium_end_date": null,
+        "biography": null,
+        "last_seen": null,
+        "photopath": null,
+        "saldo": 0.0,
+        "device_id": "123",
+        "google_ads_id": "123",
+        "user_id_public": "MB19"
+    }
 }

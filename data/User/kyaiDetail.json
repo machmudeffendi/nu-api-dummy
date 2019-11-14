@@ -1,0 +1,35 @@
+{
+    "response_code": 0,
+    "response_message": "ok",
+    "data": [
+        {
+            "username": "kh.Andi",
+            "password": "$2a$10$5ZINqeYq1AmyuxY5MVdgVe/A1bWN2k/lk8fZrSc4Z1tIyGdrpaBEW",
+            "authorities": null,
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "credentialsNonExpired": true,
+            "enabled": false,
+            "user_id": "MB2019110500105949",
+            "display_name": null,
+            "full_name": null,
+            "phone_num": "0819",
+            "email": "mohamadsopian32@gmail.com",
+            "birth_date": null,
+            "status": "1",
+            "role": "2",
+            "reg_date": "20191105000929",
+            "premium": false,
+            "premium_start_date": null,
+            "premium_end_date": null,
+            "biography": null,
+            "last_seen": null,
+            "photopath": null,
+            "saldo": 0.0,
+            "device_id": "123",
+            "google_ads_id": "123",
+            "user_id_public": null,
+            "online_flag": false
+        }
+    ]
+}

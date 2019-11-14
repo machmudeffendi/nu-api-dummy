@@ -1,5 +1,5 @@
 {
-    "status": 0,
-    "message": "ok",
-    "data": "sopian123"
+    "response_code": 0,
+    "response_message": "ok",
+    "data": "please check your email we have send your activation url "
 }
